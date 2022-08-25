@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <script src="jquery.min.js"></script>
+    <script>
+
+        $(function(){
+           $("#Spouse").hide()
+
+           //radio input chane event
+           $("input[type=radio][name=type]").change(function(){
+            if($(this).val()==1){
+                $("#Spouse").show()
+
+            }else if($(this).val()==0){
+                $("#Spouse").hide()
+            }
+           })
+
+           //submit form event
+           $("#myform").on("submit",function(event){
+            event.preventDefault()
+
+            //getting form input value
+            var username=$("#username").val()
+            var age=$("#age").val()
+            var status=$("input[name=type]:checked").val()
+
+            //console.log
+
+            var data= ""
+            if(status==1){
+                var spouse=$("#Spouse").val()
+                data +=`${username} is ${age} years old and married. Spuse name is ${spouse}`
+            }else{
+                data += `${username} is ${age} years old and single`
+            }
+            alert(data)
+           })
+        })
+        
+    </script>
+</head>
+<body>
+    <form action="" id="myform">
+
+    <input type="text" name="username" id="username" placeholder="Name"><br>
+    <input type="age" name="age" id="age" placeholder="Age"><br>
+    <input type="radio" value="0" name="type" id="single" checked>
+    <label for="single">Single</label>
+    <input type="radio"  value="1"  name="type" id="marriaged">
+    <label for="Marriaged">Marriaged</label><br>
+    <input type="text" name="Spouse" id="Spouse" placeholder="Spouse"><br>
+    <input type="submit" name="" id="" value="Save">
+        
+</form>
+
+
+</body>
+</html>

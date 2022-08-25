@@ -20,6 +20,7 @@ insert into users values(3,'Mya Mya','mya@gmail.com');
 
 select * from users;
 
+
 update users set username='Ma Ma',email='mama@gmail.com' where userid=1;
 update users set username='Myo Myo',email='myo@gmail.com' where userid=3;
 update users set username='Mya' ,email='myamya@gmail.com' where userid=2;

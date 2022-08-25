@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example2</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $("#button").click(function(){
+
+                var username=$("#username").val()
+
+                var test=new Array()
+                $("input[name=hob]:checked").each(function(){
+                    test.push($(this).val())
+
+
+                })
+                alert(" My name is "  +username + ". My Hobbie is " +test )
+                
+            })
+            // $("#myform").on("submit",function(event){
+            //    event.preventDefault()
+
+            //     var username=$("#username").val()
+            //     var status=$("input[name=hob]:checked").val()
+
+            //     var data= ""
+            // if(status==0){
+            //     data +=` My name is ${username} . My Hobbie is Reading. `
+            // }else if(status==1){
+            //     data += ` My name is ${username} . My Hobbie is Game.`
+            // }else if(status==2){
+            //     data += ` My name is ${username} . My Hobbie is Football.`
+
+            // }
+            // else if(status==0 &&  status==1){
+            //     data += ` My name is ${username} . My Hobbie is Reading and Game .`
+
+            // }else if(status==0 && status==1 && status==2){
+            //     data += ` My name is ${username} . My Hobbie is Reading and Football and Game.`
+
+            // }else if(status==0 && status==2){
+            //     data += ` My name is ${username} . My Hobbie is Reading and football.`
+
+            // }else if(status==1 && status==2){
+            //     data += ` My name is ${username} . My Hobbie is Game and Football.`
+
+            // }
+            // alert(data)
+
+            // })
+        })
+
+    </script>
+</head>
+<body>
+    <form action="" id="myform">
+
+        <input type="text" name="username" id="username" placeholder="Name"><br>
+         <label for="">Hobbies:</label>   <br>
+
+        <input type="checkbox" name="hob" value="Reading">
+        <label for="language">Reading</label>
+        <input type="checkbox" name="hob" value="Game">
+        <label for="language">Game</label>
+        <input type="checkbox" name="hob" value="Football">
+        <label for="language">Football</label><br><br>
+
+        <input type="submit" name="" id="button" value="Save">
+
+    
+</body>
+</html>
